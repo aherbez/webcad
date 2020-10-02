@@ -1,0 +1,38 @@
+<html>
+    <head>
+
+        <link rel="stylesheet" href="css/styles.css" />
+    
+        <title>Web-based CAD example</title>
+    </head>
+
+    <body>
+        
+        <canvas id="editor" width="800" height="600"></canvas>        
+
+        <div id="controls">
+            Dimensions:
+            <div class="input-dim">
+                Width <input class="dimension" type="text" id="width" value="1.5"/>
+            </div>
+            <div class="input-dim">
+                Height <input class="dimension" type="text" id="height" value="8"/>
+            </div>
+            <div class="input-dim">
+                Depth <input class="dimension" type="text" id="depth" value="2"/>
+            </div>
+            <input class="btn" type="button" onclick="updateGeo()" value="Update Geometry" />
+
+            <br />
+
+            <input class="btn" type="button" onclick="exportSTL()" value="EXPORT STL" />
+        </div>
+
+
+        <script src="js/libs/three.min.js"></script>
+        <script src="js/libs/STLExporter.js"></script>
+        <script src="js/libs/OrbitControls.js"></script>
+        <script src="js/makeGeo.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
