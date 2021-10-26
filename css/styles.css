@@ -26,7 +26,7 @@ div.input-dim {
     padding: 2px;
 }
 
-div.input-dim:nth-child(2) {
+div.input-dim:nth-child(even) {
     background: #FFF;
 
 }

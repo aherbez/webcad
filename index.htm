@@ -13,13 +13,13 @@
         <div id="controls">
             Dimensions:
             <div class="input-dim">
-                Width <input class="dimension" type="text" id="width" value="1.5"/>
+                Width <input id="width" value="1.5" onchange="updateGeo()" class="dimension" type="text" />
             </div>
             <div class="input-dim">
-                Height <input class="dimension" type="text" id="height" value="8"/>
+                Height <input id="height" value="8" onchange="updateGeo()" class="dimension" type="text" />
             </div>
             <div class="input-dim">
-                Depth <input class="dimension" type="text" id="depth" value="2"/>
+                Depth <input id="depth" value="2" onchange="updateGeo()" class="dimension" type="text" />
             </div>
             <input class="btn" type="button" onclick="updateGeo()" value="Update Geometry" />
 

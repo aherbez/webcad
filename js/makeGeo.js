@@ -13,7 +13,7 @@
  */
 
 function makeGeo() {
-    return makeGeoDynamiceCube();
+    return makeGeoDynamicCube();
 }
 
 /**

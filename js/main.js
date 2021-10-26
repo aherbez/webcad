@@ -34,11 +34,11 @@ function init()
     let canvas = document.getElementById("editor");
     
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(45, 800 / 600, 0.1, 1000);
+    camera = new THREE.PerspectiveCamera(45, WIDTH / HEIGHT, 0.1, 1000);
     
     renderer = new THREE.WebGLRenderer({canvas: canvas});
     renderer.setClearColor(0x000000, 1.0);
-    renderer.setSize(800, 600);
+    renderer.setSize(WIDTH, HEIGHT);
 
     controls = new THREE.OrbitControls( camera, renderer.domElement );
     camera.position.set(0, 20, 100);
