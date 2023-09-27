@@ -6,8 +6,8 @@
  * zanzastoys.com
  * aherbez@gmail.com
  * 
- * This isn't necessarily the best code, nor does it comply with JS best practices in 2020.
- * However, it is the simplest and most straightforward boilerplate that I could manage
+ * This doesn't comply with JS best practices, but it's optimized for ease of use.
+ * It's the simplest and most straightforward boilerplate that I could manage
  * to provide a way for people to get into making custom geometry and saving it to STL
  * as easily as possible.
  * 
@@ -23,6 +23,8 @@ let material = null;
 let exporter = null;
 let downloadLink = null;
 let object = null;
+
+let normalMaterial, wireframeMaterial;
 
 function init()
 {
@@ -45,7 +47,15 @@ function init()
     controls.update();
 
     // using a MeshNormalMaterial makes it easy to see the shape
-    material = new THREE.MeshNormalMaterial();
+    normalMaterial = new THREE.MeshNormalMaterial();
+
+    // another good way to see what you've made is to use a
+    // MeshBasicMaterial with wireframe set to true
+    wireframeMaterial = new THREE.MeshBasicMaterial({
+        color: 0x00ff00,
+        wireframe: true
+    });
+    
 
     updateGeo();
     render();
@@ -62,15 +72,13 @@ function updateGeo()
     let geo = makeGeo();
     finalizeGeo(geo);
  
-    object = new THREE.Mesh(geo, material);
+    object = new THREE.Mesh(geo, normalMaterial);
 
     scene.add(object);
 }
 
 function finalizeGeo(g) {
-    g.verticesNeedUpdate = true;
-    g.elementsNeedUpdate = true;
-    g.computeFaceNormals();
+    g.computeVertexNormals();
 }
 
 function render()
